@@ -1,0 +1,13 @@
+<a class="waves-effect waves-teal btn-flat">
+    <i class="material-icons left teal-text">call </i>
+</a>
+<span
+        editable="ctrl.editPhoneNumber(text,secondArg)"
+        second-arg="{{$index}}"
+    > {{ item }}
+</span>
+<div class="number-btnz" >
+    <a ng-click="ctrl.deletePhoneNum($index)" class="num-delete-btn" class="waves-effect waves-red btn-flat">
+        <i class="material-icons red-text">delete</i>
+    </a>
+</div>

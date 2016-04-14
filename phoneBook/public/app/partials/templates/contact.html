@@ -1,0 +1,25 @@
+<div id="main"  ng-animate-swap="ctrl.currentItem">
+    <div class="item-main">
+        <div class="item-view">
+            <i class="material-icons large">person</i>
+            <div ng-include="'app/partials/btnz/itemBtnz.html'"></div>
+            <div
+
+                    id="title"
+                    editable="ctrl.updateItemName(text)"
+            >{{ctrl.currentItem.fName + ' ' +ctrl.currentItem.lName}}</div>
+
+        </div>
+
+    </div>
+    <ul class="collection">
+        <li ng-if="ctrl.showNumberForm" ng-include="'app/partials/forms/addPhoneNumForm.html'" class="collection-item pop-in-form">
+
+        </li>
+        <li class="collection-item phone-num" ng-repeat="item in ctrl.currentItem.phoneNum track by $index">
+            <div ng-include="'app/partials/phoneNumber.html'"></div>
+        </li>
+    </ul>
+</div>
+
+

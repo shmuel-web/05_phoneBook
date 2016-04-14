@@ -1,0 +1,15 @@
+<form ng-submit="ctrl.addNumberFormHandler()" id="add-number">
+    <div class="input-field">
+        <input ng-model="ctrl.number" id="number" type="tel" auto-focus >
+        <label for="number" data-error="wrong" data-success="right" >phone number</label>
+        <div class="input-btnz">
+            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">
+                Submit
+                <i class="material-icons right">send</i>
+            </button>
+            <a ng-click="ctrl.hideForm()" id="cancel-input" class="waves-effect waves-red btn-flat">
+                cancel
+            </a>
+        </div>
+    </div>
+</form>

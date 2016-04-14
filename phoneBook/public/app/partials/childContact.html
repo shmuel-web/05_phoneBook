@@ -1,0 +1,16 @@
+<div ng-if="item.fName"  >
+    <i class="material-icons circle green front">person</i>
+    <span
+            class="title editable"
+            editable="ctrl.updateItemName(text,secondArg)"
+            second-arg="{{item.id}}"
+
+    >{{ item.fName + ' ' + item.lName }}</span>
+    <p>
+        <span ng-repeat = "number in item.phoneNum track by $index">{{ number }}
+        <span ng-if=" $middle || $first && item.phoneNum.length > 1">, </span>
+    </span>
+    </p>
+
+    <a class="secondary-content"><i ng-click="ctrl.displayCurrentItem(item)" class="material-icons display-item">send</i></a>
+</div>

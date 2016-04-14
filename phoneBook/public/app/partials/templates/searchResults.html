@@ -1,0 +1,15 @@
+
+<div class="item-main">
+    <div class="item-view">
+        <i class="material-icons large">youtube_searched_for</i>
+        <div id="title">{{ctrl.currentItem.searchParam}}</div>
+        <div class="search-result-msg" ng-if="ctrl.currentItem.childItems.length == 0"> was not found!</div>
+
+    </div>
+
+</div>
+
+<div ng-include="'app/partials/GroupChildItems.html'">
+
+</div>
+

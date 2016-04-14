@@ -1,0 +1,17 @@
+<div id="main"  ng-animate-swap="ctrl.currentItem">
+    <div class="item-main">
+        <div class="item-view">
+            <div ng-include="'app/partials/btnz/itemBtnz.html'"></div>
+            <i class="material-icons large">group</i>
+            <div
+                    id="title"
+                    editable="ctrl.updateItemName(text)"
+            >{{ctrl.currentItem.name}}</div>
+        </div>
+    </div>
+    <div ng-include="'app/partials/GroupChildItems.html'">
+
+    </div>
+
+
+</div>

@@ -1,0 +1,16 @@
+<i class="material-icons circle blue">group</i>
+<form ng-submit="ctrl.addGroupFormHandler()" id="add-group">
+    <div class="input-field">
+        <input id="group_name" type="text" ng-model="ctrl.groupName" auto-focus>
+        <label for="group_name" data-error="wrong" data-success="right">add new group</label>
+        <div class="input-btnz">
+            <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">
+                Submit
+                <i class="material-icons right">send</i>
+            </button>
+            <a ng-click="ctrl.hideForm()" id="cancel-input" class="waves-effect waves-red btn-flat">
+                cancel
+            </a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+<ul class="collection">
+    <li ng-if="ctrl.showGroupFrom" ng-include="'app/partials/forms/addGroupForm.html'" class="collection-item avatar pop-in-form" >
+    </li>
+
+    <li ng-if="ctrl.showContactForm" ng-include="'app/partials/forms/addContactForm.html'" class="collection-item avatar pop-in-form" >
+    </li>
+
+    <li ng-click="ctrl.flipDelete($index)" class="collection-item avatar " ng-repeat="item in ctrl.currentItem.childItems | groupsFirstByABC track by item.id">
+        <div class="" ng-include="'app/partials/childContact.html'"></div>
+        <div  ng-include="'app/partials/childGroup.html'"></div>
+    </li>
+
+</ul>

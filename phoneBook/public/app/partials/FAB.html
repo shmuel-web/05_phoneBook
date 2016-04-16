@@ -1,0 +1,23 @@
+<div ng-show="ctrl.currentItem.name" id="group-FAB" class="fixed-action-btn responsive-fab" >
+    <a class="btn-floating btn-large red">
+        <i class="large mdi-content-add">
+        </i>
+    </a>
+    <ul>
+        <li ng-click="f.showAddContactForm()" ><a id="add-contact" class="btn-floating green"><i class="material-icons">person_add</i></a></li>
+        <li ng-click="f.showAddGroupFrom()" ><a id="add-group" class="btn-floating blue"><i class="material-icons">group_add</i></a></li>
+    </ul>
+</div>
+
+<div ng-show="ctrl.currentItem.fName" id="contact-FAB" class="fixed-action-btn responsive-fab" >
+    <a class="btn-floating btn-large red">
+        <i class="large mdi-content-add">
+        </i>
+    </a>
+    <ul>
+        <li><a id="add-email" class="btn-floating red"><i class="material-icons">email</i></a></li>
+        <li><a id="add-address" class="btn-floating yellow darken-1"><i class="material-icons">add_location</i></a></li>
+        <li><a ng-click="f.addNumberForm()" id="add-phone-num" class="btn-floating green"><i class="material-icons">phone</i></a></li>
+
+    </ul>
+</div>

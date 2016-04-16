@@ -7,31 +7,14 @@
         vm.currentItem = this.phoneBook.root;
         vm.currentItem.url = "app/partials/templates/root.html";
         vm.$scope = $scope;
-        //for learning perpes
-        vm.test = function(text){
-            var text = text || "hello dummy";
-            console.log(text);
-        };
+        vm.showContactForm = false;
+        vm.showGroupFrom = false;
+        vm.showNumberForm = false;
     }
+
     //item view
     MainCtrl.prototype.editMode = function(){
         $('#title').focus();
-    };
-    MainCtrl.prototype.hideForm = function(){
-        this.showContactForm = false;
-        this.showGroupFrom = false;
-        this.showNumberForm = false;
-    };
-
-    // displays the add new phone number form
-    MainCtrl.prototype.addNumberForm = function(){
-        this.showNumberForm = true;
-    };
-
-    // displays the add new contact form
-    MainCtrl.prototype.showAddContactForm = function(){
-        this.showContactForm = true;
-        this.showGroupFrom = false;
     };
 
     MainCtrl.prototype.displayCurrentItem = function(item,callback){
@@ -59,14 +42,6 @@
             callback();
         }
 
-    };
-
-
-    // displays the add new group form
-    MainCtrl.prototype.showAddGroupFrom = function(){
-        console.log('addGroupFrom');
-        this.showGroupFrom = true;
-        this.showContactForm = false;
     };
 
     //handls the add group form
@@ -178,23 +153,11 @@
         });
     };
 
-    MainCtrl.prototype.search = function(event) {
-        var results = this.phoneBook.search(this.searchParam);
-        var resObj = {
-            searchResult:true,
-            searchParam:this.searchParam,
-            childItems:results,
-            backItem:this.currentItem
-        };
-        this.displayCurrentItem(resObj);
-        this.searchParam = "";
-        var inputField = event.target.firstElementChild.firstElementChild;
-        inputField.blur();
+    MainCtrl.prototype.hideForm = function (){
+        this.$scope.$broadcast ('hideAllForms');
     };
 
     angular
         .module('app')
         .controller('MainCtrl',['phoneBookService','$scope','dataService',MainCtrl]);
 })();
-
-//todo need to refactor the edit child items function to work with item.id

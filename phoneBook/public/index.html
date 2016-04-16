@@ -14,44 +14,25 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
-<body ng-controller="MainCtrl as ctrl">
+<body ng-controller="MainCtrl as ctrl" >
 <header ng-include="'app/partials/header.html'">
 
 
 
 </header>
 <main  class="dynamic-padding" ng-animate-swap="ctrl.currentItem" >
-    <div ng-include="ctrl.currentItem.url">
+    <div ng-include="ctrl.currentItem.url" >
 
     </div>
 
+
 </main>
 
-<div ng-show="ctrl.currentItem.name" id="group-FAB" class="fixed-action-btn responsive-fab" >
-    <a class="btn-floating btn-large red">
-        <i class="large mdi-content-add">
-        </i>
-    </a>
-    <ul>
-        <li ng-click="ctrl.showAddContactForm()" ><a id="add-contact" class="btn-floating green"><i class="material-icons">person_add</i></a></li>
-        <li ng-click="ctrl.showAddGroupFrom()" ><a id="add-group" class="btn-floating blue"><i class="material-icons">group_add</i></a></li>
-    </ul>
-</div>
+<fab ng-controller="FormCtrl as f" ng-include="'app/partials/FAB.html'" >
 
-<div ng-show="ctrl.currentItem.fName" id="contact-FAB" class="fixed-action-btn responsive-fab" >
-    <a class="btn-floating btn-large red">
-        <i class="large mdi-content-add">
-        </i>
-    </a>
-    <ul>
-        <li><a id="add-email" class="btn-floating red"><i class="material-icons">email</i></a></li>
-        <li><a id="add-address" class="btn-floating yellow darken-1"><i class="material-icons">add_location</i></a></li>
-        <li><a ng-click="ctrl.addNumberForm()" id="add-phone-num" class="btn-floating green"><i class="material-icons">phone</i></a></li>
+</fab>
 
-    </ul>
-</div>
-
-<footer class="page-footer blue darken-4">
+<footer class="page-footer blue darken-4" >
     <div class="footer-copyright">
         <div class="container">
             shmuel-disreli © 2016
@@ -115,6 +96,9 @@
 <!--controllers-->
 <script src="app/controllers/MainCtrl.js"></script>
 <script src="app/controllers/HeaderCtrl.js"></script>
+<script src="app/controllers/FormCtrl.js"></script>
+
+
 
 
 

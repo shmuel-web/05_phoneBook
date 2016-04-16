@@ -23,6 +23,17 @@
         this.showNumberForm = false;
     };
 
+    // displays the add new phone number form
+    MainCtrl.prototype.addNumberForm = function(){
+        this.showNumberForm = true;
+    };
+
+    // displays the add new contact form
+    MainCtrl.prototype.showAddContactForm = function(){
+        this.showContactForm = true;
+        this.showGroupFrom = false;
+    };
+
     MainCtrl.prototype.displayCurrentItem = function(item,callback){
         //    chek if it is root group or contact or search results
         //    & sets the url value to the proper partial template url accordingly
@@ -49,42 +60,7 @@
         }
 
     };
-    //header =========================================
-    MainCtrl.prototype.up = function(){
-        this.displayCurrentItem(this.currentItem.parent);
-    };
 
-    MainCtrl.prototype.back = function(){
-        this.displayCurrentItem(this.currentItem.backItem);
-    };
-
-    //reset btn function asks the user & restore to defaults
-    MainCtrl.prototype.reset = function(){
-        $('#reset-modal').openModal();
-        var self = this;
-        $('#reset-confirm').one('click',function(){
-            var content = '<i class="material-icons small red-text">restore</i><span>your phone book is set bck to default </span>';
-            Materialize.toast(content, 4000);
-            self.phoneBook.reset();
-            self.data.save();
-            self.displayCurrentItem(self.phoneBook.root);
-            self.$scope.$apply();
-        });
-
-    };
-
-    // displays the add new phone number form
-    MainCtrl.prototype.addNumberForm = function(){
-        console.log('addContactForm');
-        this.showNumberForm = true;
-    };
-
-    // displays the add new contact form
-    MainCtrl.prototype.showAddContactForm = function(){
-        console.log('addContactForm');
-        this.showContactForm = true;
-        this.showGroupFrom = false;
-    };
 
     // displays the add new group form
     MainCtrl.prototype.showAddGroupFrom = function(){
@@ -168,20 +144,6 @@
             //if the user submited a blank string then its probbely a mistake or that he wishes to delete the item
             //    todo ask the user if he wishes to delete the item if not do nothing
             this.deletePhoneNum(index);
-        }
-    };
-
-    //when the user blurs the edit mode or press enter on a LI contact or group name
-    MainCtrl.prototype.editGroupChildItems = function(newName,index){
-        if (newName != "") {
-            this.currentItem.changeChildItemName(newName,index);
-            this.data.save();
-        }
-        else {
-            //if the user submited a blank string then its probbely a mistake or that he wishes to delete the item
-            //    todo ask the user if he wishes to delete the item if not do nothing
-            //send to a modal that aska the user if he wishes to delete
-            //then if so delete alse do a scope apply whiche will reset to defaults
         }
     };
 

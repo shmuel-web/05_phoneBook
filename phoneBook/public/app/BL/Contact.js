@@ -34,7 +34,7 @@ BL.Contact = (function () {
     Contact.prototype.changeName = function (newName) {
         var fullName = newName.split(" ", 2);
         this.fName = fullName[0];
-        this.lName = fullName[1];
+        this.lName = fullName[1] || "";
     };
 
     Contact.prototype.changePhoneNum = function (newNum, index) {

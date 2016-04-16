@@ -15,41 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body ng-controller="MainCtrl as ctrl">
-<header>
-    <div class="navbar-fixed">
+<header ng-include="'app/partials/header.html'">
 
-        <nav>
-            <div class="nav-wrapper blue darken-3 dynamic-padding">
-                <ul>
-                    <li>
-                        <a ng-show="ctrl.currentItem.parent" ng-click="ctrl.up()">
-                            <i class="flip material-icons left">subdirectory_arrow_left</i>
-                            UP
-                        </a>
-                    </li>
-                    <li>
-                        <a ng-show="ctrl.currentItem.searchResult" ng-click="ctrl.back()" id="back-btn">
-                            <i class="material-icons left">keyboard_backspace</i>
-                            BACK
-                        </a>
-                    </li>
-                    <li class="right">
-                        <a ng-click="ctrl.reset()">
-                            <i class="material-icons left">restore</i>
-                        </a>
-                    </li>
-                </ul>
-                <form ng-submit="ctrl.search($event)" id="search-bar">
-                    <div class="input-field">
-                        <input ng-model="ctrl.searchParam"  id="search" type="search" required>
-                        <label for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-
-            </div>
-        </nav>
-    </div>
 
 
 </header>
@@ -133,7 +100,7 @@
 <script src="app/app.js"></script>
 
 <!--filters-->
-<script src="app/filters.js"></script>
+<script src="app/filters/filters.js"></script>
 
 <!--directivs-->
 <script src="app/directivs/directiv.autoFocus.js"></script>
@@ -141,12 +108,15 @@
 <script src="app/directivs/directiv.editablePhoneNum.js"></script>
 
 <!--services-->
-<script src="app/phoneBookService.js"></script>
-<script src="app/data.service.js"></script>
+<script src="app/services/phoneBookService.js"></script>
+<script src="app/services/data.service.js"></script>
 
 
 <!--controllers-->
-<script src="app/MainCtrl.js"></script>
+<script src="app/controllers/MainCtrl.js"></script>
+<script src="app/controllers/HeaderCtrl.js"></script>
+
+
 
 <!--<script src="js/helpers.js"></script>-->
 <!--<script src="js/classes/Group.js"></script>-->

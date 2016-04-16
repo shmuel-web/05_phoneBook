@@ -1,0 +1,34 @@
+<div class="navbar-fixed" ng-controller="HeaderCtrl as header" ng-click="header.test()">
+
+    <nav>
+        <div class="nav-wrapper blue darken-3 dynamic-padding">
+            <ul>
+                <li>
+                    <a ng-show="ctrl.currentItem.parent" ng-click="header.up()">
+                        <i class="flip material-icons left">subdirectory_arrow_left</i>
+                        UP
+                    </a>
+                </li>
+                <li>
+                    <a ng-show="ctrl.currentItem.searchResult" ng-click="header.back()" id="back-btn">
+                        <i class="material-icons left">keyboard_backspace</i>
+                        BACK
+                    </a>
+                </li>
+                <li class="right">
+                    <a ng-click="header.reset()">
+                        <i class="material-icons left">restore</i>
+                    </a>
+                </li>
+            </ul>
+            <form ng-submit="header.search($event)" id="search-bar">
+                <div class="input-field">
+                    <input ng-model="header.searchParam"  id="search" type="search" required>
+                    <label for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+
+        </div>
+    </nav>
+</div>

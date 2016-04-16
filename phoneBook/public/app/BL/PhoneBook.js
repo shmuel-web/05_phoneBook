@@ -187,7 +187,6 @@ BL.PhoneBook = (function () {
     PhoneBook.prototype.readPhoneBook = function readPhoneBook(phoneBookJson) {
         //todo clean bug
         //reads the phone book items from local storage
-        console.log(phoneBookJson);
         var phoneBookArray = phoneBookJson;
         var self = this;
         if (phoneBookArray) {

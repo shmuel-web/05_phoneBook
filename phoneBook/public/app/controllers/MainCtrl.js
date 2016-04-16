@@ -7,9 +7,6 @@
         vm.currentItem = this.phoneBook.root;
         vm.currentItem.url = "app/partials/templates/root.html";
         vm.$scope = $scope;
-        vm.showContactForm = false;
-        vm.showGroupFrom = false;
-        vm.showNumberForm = false;
     }
 
     //item view

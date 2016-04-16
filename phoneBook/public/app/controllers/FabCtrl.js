@@ -1,6 +1,6 @@
 (function(){
 
-    function FormCtrl ($scope){
+    function FabCtrl ($scope){
         var vm = this;
         vm.parentCtrl = $scope.ctrl;
         $scope.$on('hideAllForms',function(){
@@ -8,27 +8,23 @@
         });
     }
 
-    FormCtrl.prototype.showAddGroupFrom = function(){
-        console.log('addGroupFrom');
+    FabCtrl.prototype.showAddGroupFrom = function(){
         this.parentCtrl.showGroupFrom = true;
         this.parentCtrl.showContactForm = false;
     };
 
     // displays the add new phone number form
-    FormCtrl.prototype.addNumberForm = function(){
-        console.log('1');
+    FabCtrl.prototype.addNumberForm = function(){
         this.parentCtrl.showNumberForm = true;
     };
 
     // displays the add new contact form
-    FormCtrl.prototype.showAddContactForm = function(){
-        console.log('2');
+    FabCtrl.prototype.showAddContactForm = function(){
         this.parentCtrl.showContactForm = true;
         this.parentCtrl.showGroupFrom = false;
     };
 
-    FormCtrl.prototype.hideForm = function(){
-        console.log('hide');
+    FabCtrl.prototype.hideForm = function(){
         this.parentCtrl.showContactForm = false;
         this.parentCtrl.showGroupFrom = false;
         this.parentCtrl.showNumberForm = false;
@@ -36,5 +32,5 @@
 
     angular
         .module('app')
-        .controller('FormCtrl',['$scope',FormCtrl]);
+        .controller('FabCtrl',['$scope',FabCtrl]);
 })();

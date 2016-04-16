@@ -3,23 +3,20 @@
 
         function save (){
             var data = JSON.stringify( phoneBookService.toJsonArray() );
-
-            console.log('test',data);
             $http({
                 method:'POST',
                 url:'/phone-book',
                 data: data
             }).then(function(res){
-                console.log(res);
+
             },function(err){
-                console.log(err);
+                throw(err);
             });
         }
 
         return {
             save:save
         }
-
     }
 
     angular
